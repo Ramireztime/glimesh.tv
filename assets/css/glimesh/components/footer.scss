@@ -29,3 +29,18 @@
 .footer-main.pt-5 {
     padding-top: 4rem !important;
 }
+
+/* TODO - limit these to footer icons */
+.fa-stack {
+    font-size: 0.9em; 
+}
+
+.fa-stack-1x {
+    font-size: 1.2em!important;
+}
+
+[data-theme="dark"] {
+    .fa-inverse {
+        color:black;
+    }
+}
