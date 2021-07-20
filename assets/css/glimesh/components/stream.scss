@@ -94,19 +94,6 @@
             max-height: calc(100vh - 90px);
         }
     }
-
-    .chat-flex {
-        position: relative;
-        flex: 1 1 auto;
-    }
-
-    .chat-absolute {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        overflow-y: auto;
-        width: 100%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -117,7 +104,48 @@
     }
 }
 
-
 input#channel_title {
     height: 45px;
+}
+
+//Experimental Sticky Chat
+//TODO: Create toggleable setting to enable sticky chat "theme". Currently tied to Dark/Light mode toggle. Dark = Existing layout, Light = Sticky Layout
+:root {
+    @media (min-width: 992px) {   
+        .chat-flex {
+            position: relative;
+            flex: 1 1 auto;
+        }
+    
+        .chat-absolute {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            width: 100%;
+        }
+    }
+}
+
+[data-theme="light"] {
+    @media (min-width: 992px) {
+        .sticky-chat {
+            position: fixed;
+            right: 0;
+            bottom: auto;
+            height: 94vh;
+        }
+
+        .chat-flex {
+            position: relative;
+            flex: 1 1 auto;
+        }
+    
+        .chat-absolute {
+            position: -webkit-sticky;
+            position: sticky;
+            //top: 82px;
+            height: 100%;
+        }
+    }
 }

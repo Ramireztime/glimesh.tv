@@ -148,7 +148,7 @@ updated_at: <%= @stream_metadata.updated_at %>
             </div>
         </div>
 
-        <div id="chat-column" class="col-lg-3 d-flex flex-column position-relative layout-spacing">
+        <div id="chat-column" class="col-lg-3 d-flex flex-column layout-spacing sticky-chat">
             <div class="chat-flex">
                 <div class="chat-absolute">
                     <%= live_render @socket, GlimeshWeb.ChatLive.Index, id: "chat", session: %{"user" => @user, "channel_id" => @channel.id, "popped_out" => false} %>
@@ -159,7 +159,7 @@ updated_at: <%= @stream_metadata.updated_at %>
     </div>
 
     <div class="row">
-        <div class="col-lg-9 layout-spacing">
+        <div class="col-lg-6 layout-spacing"> <!-- TODO: Based on new toggle setting, change 'col-lg-6' to 'col-lg-9' -->
             <div class="card">
                 <div class="card-header">
                     <h3>About <%= @streamer.displayname %>'s Stream</h3>
